@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendetta Training Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+header h1 {
+  color: #e50914;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #e50914;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+              url('https://images.unsplash.com/photo-1599058917212-d750089bc07f') center/cover;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h2 {
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 span {
+  color: #e50914;
+}
+
+.hero-content p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+.hero-content button {
+  padding: 14px 30px;
+  border: none;
+  background: #e50914;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.hero-content button:hover {
+  background: #ff1f2d;
+}
+
+/* ===== SECTION ===== */
+section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  color: #e50914;
+}
+
+/* ===== PROGRAM ===== */
+.programs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(229,9,20,0.4);
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+/* ===== GALERI ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(229,9,20,0.5);
+}
+
+/* ===== FORM ===== */
+.form-box {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+form input, form select, form button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+}
+
+form input, form select {
+  background: #222;
+  color: #fff;
+}
+
+form button {
+  background: #e50914;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ff1f2d;
+}
+
+/* ===== UPLOAD FOTO ===== */
+.upload-box {
+  max-width: 500px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.upload-box input {
+  background: #222;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.preview img {
+  width: 100%;
+  max-height: 300px;
+  margin-top: 15px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #777;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-content h2 {
+    font-size: 34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>VENDETTA</h1>
+  <nav>
+    <a href="#program">Program</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#daftar">Daftar</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>VENDETTA <span>TRAINING ACADEMY</span></h2>
+    <p>  
+    Pelatihan Jasmani & Atletik Yang Di Latih Oleh Pelatih Berlisensi Dan Profesional.</p>
+    <button onclick="document.getElementById('daftar').scrollIntoView()">Daftar Sekarang</button>
+  </div>
+</section>
+
+<section id="program">
+  <div class="section-title">
+    <h3>Program <span>Kami</span></h3>
+    <p>Pelatihan dirancang khusus sesuai kebutuhan peserta</p>
+  </div>
+
+  <div class="programs">
+    <div class="card">
+      <h4>Atletik Prestasi</h4>
+      <p>Kecepatan, ketahanan, kekuatan & agility training.</p>
+    </div>
+    <div class="card">
+      <h4>Bimbel Jasmani Casis</h4>
+      <p>Persiapan fisik TNI, Polri & sekolah kedinasan.</p>
+    </div>
+    <div class="card">
+      <h4>Beginner Runner</h4>
+      <p>Program Untuk Pelari Yang Mulai Dari Nol.</p>
+    </div>
+    <div class="card">
+      <h4>Beginner Swimmer</h4>
+      <p>Untuk pemula yang ingin Belajar Renang Dari Nol.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="section-title">
+    <h3>Galeri <span>Latihan</span></h3>
+    <p>Dokumentasi kegiatan Vendetta Training Academy</p>
+  </div>
+
+  <div class="gallery">
+    <img src="karoputra.jpg">
+    <img src="karoputri.jpg">
+    <img src="rendy.jpg">
+    <img src="prayuda.jpg">
+  </div>
+</section>
+
+<section id="daftar">
+  <div class="section-title">
+    <h3>Pendaftaran <span>Online</span></h3>
+    <p>Isi formulir di bawah untuk bergabung</p>
+  </div>
+
+  <div class="form-box">
+    <form>
+      <input type="text" placeholder="Nama Lengkap" required>
+      <input type="number" placeholder="Usia" required>
+      <input type="text" placeholder="Nomor WhatsApp" required>
+      <select required>
+        <option value="">Pilih Program</option>
+        <option>Atletik Prestasi</option>
+        <option>Bimbel Jasmani Casis</option>
+        <option>Beginner Runner</option>
+        <option>Beginner Swimmer</option>
+      </select>
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+  </div>
+
+  <div class="upload-box">
+    <h4>Upload Foto Peserta</h4>
+    <input type="file" accept="image/*" onchange="previewImage(event)">
+    <div class="preview">
+      <img id="output">
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="section-title">
+    <h3>Kontak <span>Kami</span></h3>
+    <p>📸 Instagram: @VendettaTrainingAcademy</p>
+    <p>📱 WhatsApp: 0896-0244-4489</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Vendetta Training Lab. All Rights Reserved.</p>
+</footer>
+
+<script>
+function previewImage(event) {
+  const output = document.getElementById('output');
+  output.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = () => URL.revokeObjectURL(output.src);
+}
+</script>
+
+</body>
+</html>
