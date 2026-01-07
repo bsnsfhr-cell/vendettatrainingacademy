@@ -342,6 +342,100 @@ function previewImage(event) {
   output.onload = () => URL.revokeObjectURL(output.src);
 }
 </script>
+<!-- FLOATING WHATSAPP PENDAFTARAN -->
+<a href="#" class="wa-float" onclick="bookingWA()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  <span>Daftar via WhatsApp</span>
+</a>
 
+<script>
+/* =========================
+   AUTO WHATSAPP PENDAFTARAN BIMBEL
+   ========================= */
+
+let currentProgram = "Bimbel Jasmani & Program Lainnya";
+
+// DIPANGGIL SAAT KLIK DETAIL PROGRAM (JIKA ADA)
+function openDetail(nama){
+  currentProgram = nama;
+
+  document.getElementById("propName").innerText = nama;
+  document.getElementById("modal").style.display = "flex";
+
+  let pesan = `Halo Admin 👋
+Saya ingin mendaftar bimbingan belajar.
+
+Program: ${nama}
+
+Mohon info lengkap (jadwal, biaya, dan pendaftaran).
+Terima kasih.`;
+
+  document.getElementById("waBtn").href =
+    "https://wa.me/6289602444489?text=" + encodeURIComponent(pesan);
+
+  document.getElementById("mailBtn").href =
+    "mailto:admin@bimbel.com?subject=Pendaftaran Bimbel&body=" + encodeURIComponent(pesan);
+}
+
+// TOMBOL FLOATING WHATSAPP
+function bookingWA(){
+  let pesan = `Halo Admin 👋
+Saya ingin mendaftar bimbingan belajar jasmani dan program lainnya.
+
+Mohon info lengkap mengenai:
+- Jadwal
+- Biaya
+- Cara pendaftaran
+
+Terima kasih.`;
+
+  window.open(
+    "https://wa.me/6289602444489?text=" + encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+
+// TUTUP MODAL
+function closeDetail(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+<style>
+/* =========================
+   FLOATING WHATSAPP STYLE
+   ========================= */
+.wa-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: 0.3s;
+}
+
+.wa-float img{
+  width: 26px;
+}
+
+.wa-float:hover{
+  transform: scale(1.05);
+}
+
+@media(max-width:600px){
+  .wa-float span{
+    display: none;
+  }
+}
+</style>
 </body>
 </html>
